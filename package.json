@@ -1,5 +1,5 @@
 {
-  "name": "react-base-ts-config",
+  "name": "design-system-bc",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +13,7 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "babel-loader": "8.1.0",
     "framer-motion": "4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -24,11 +25,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "chromatic": "npx chromatic --project-token=3cc98ecb1076",
+    "build-storybook-docs": "build-storybook -s public --docs",
+    "build": "cross-env BABEL_ENV=production babel src -d dist"
   },
   "eslintConfig": {
     "extends": [
@@ -59,7 +62,10 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@storybook/addon-a11y": "^6.3.4",
     "@storybook/addon-actions": "^6.3.4",
+    "@storybook/addon-docs": "^6.3.4",
     "@storybook/addon-essentials": "^6.3.4",
     "@storybook/addon-links": "^6.3.4",
     "@storybook/node-logger": "^6.3.4",
@@ -67,8 +73,11 @@
     "@storybook/react": "^6.3.4",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
+    "auto": "^10.29.3",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "8.1.0",
     "chromatic": "^5.9.2",
+    "cross-env": "^7.0.3",
     "eslint": "^7.30.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -82,5 +91,20 @@
     "husky": "^7.0.1",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.2"
-  }
+  },
+  "babel": {
+    "presets": [
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
+    ]
+  },
+  "description": "Design system UI",
+  "main": "index.js",
+  "repository": "https://github.com/BrunaCriscuolo/design-system-UI.git",
+  "author": "Bruna Criscuolo",
+  "license": "MIT"
 }
