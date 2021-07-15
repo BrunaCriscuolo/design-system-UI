@@ -6,6 +6,7 @@ type ButtonProps = {
 
 /**
 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis eum cupiditate neque sint accusamus amet nam. Sed eum dicta maxime.
+- Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis eum cupiditate neque sint accusamus amet nam. Sed eum dicta maxime.
 **/
 
 
